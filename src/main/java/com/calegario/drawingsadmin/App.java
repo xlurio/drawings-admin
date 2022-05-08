@@ -14,7 +14,7 @@ public class App
         String[] header = new String[]{
                 "file_name", "extension", "path", "last_mod"
         };
-        if (!Settings.CSV_PATH.isEmpty()){
+        if (!Settings.CSV_PATH.isEmpty() && !Settings.DRAWINGS_DIR.isEmpty()){
             CSVDBManager manager = new CSVDBManager(Settings.CSV_PATH, header);
             ThreeBtnsBox frame = new ThreeBtnsBox(
                 "Gerenciador de Desenhos",
@@ -26,10 +26,19 @@ public class App
             frame.setBtnOneListener(new AddPathListener(manager));
             frame.setBtnOneListener(new RmPathListener(manager));
             frame.setBtnOneListener(new UpdateListener(frame, manager));
-        } else {
+        }
+        if (Settings.CSV_PATH.isEmpty()) {
             JOptionPane.showMessageDialog(
                 null,
-                "CSV_PATH não informado",
+                "CSV_PATH não configurado",
+                "ERRO",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+        if (Settings.DRAWINGS_DIR.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                null,
+                "DRAWINGS_DIR não configurado",
                 "ERRO",
                 JOptionPane.ERROR_MESSAGE
             );

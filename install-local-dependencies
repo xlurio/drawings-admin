@@ -1,6 +1,12 @@
 mvn install:install-file \
--Dfile=/home/xlurio/Projects/DrawingsAdmin/drawingsadmin/lib/filedbgen-1.0-SNAPSHOT.jar \
+-Dfile=/home/xlurio/Downloads/filedbgen-1.0-SNAPSHOT.jar \
 -DgroupId=com.calegario \
 -DartifactId=filedbgen \
+-Dversion=1.0-SNAPSHOT \
+-Dpackaging=jar && \
+mvn install:install-file \
+-Dfile=/home/xlurio/Downloads/defaultwins-1.0-SNAPSHOT.jar \
+-DgroupId=com.calegario \
+-DartifactId=defaultwins \
 -Dversion=1.0-SNAPSHOT \
 -Dpackaging=jar

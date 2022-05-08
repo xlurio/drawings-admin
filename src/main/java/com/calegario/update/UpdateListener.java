@@ -7,6 +7,7 @@ import com.calegario.filedbgen.ListOfFilesGen;
 import com.calegario.defaultwins.msgbox.MsgBox;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
 import com.calegario.drawingsadmin.Settings;
 import com.calegario.defaultwins.threebtnsbox.ThreeBtnsBox;
 import javax.swing.*;
@@ -22,32 +23,48 @@ public class UpdateListener implements ActionListener {
     }
 
     public void actionPerformed (ActionEvent ev) {
-        BoxBtn oldBtn = frame.getBtnThree();
-        BoxBtn updatingBtn = new BoxBtn(
-            "Atualizando...",
-            new ActionListener(){
-                public void actionPerformed(ActionEvent ev) {
+        try {
+            BoxBtn oldBtn = frame.getBtnThree();
+            BoxBtn updatingBtn = new BoxBtn(
+                "Atualizando...",
+                new ActionListener(){
+                    public void actionPerformed(ActionEvent ev) {
 
+                    }
                 }
-            }
-        );
-        frame.setBtnThree(updatingBtn);
-        List<String> fileEnds = new ArrayList<String>();
-        fileEnds.add("pdf"); fileEnds.add("dwg"); fileEnds.add("stp");
-        fileEnds.add("step");
-        ListOfFilesGen generator =
-            new ListOfFilesGen(
-                Settings.CSV_PATH,
-                fileEnds
             );
-        manager.newDB(generator.getListOfFiles());
-        JOptionPane.showMessageDialog(
-            null,
-            "Tabela atualizada!",
-            "Sucesso!",
-            JOptionPane.INFORMATION_MESSAGE
-        );
-        updatingBtn.setBtnThree(oldBtn);
+            frame.setBtnThree(updatingBtn);
+            List<String> fileEnds = new ArrayList<String>();
+            fileEnds.add("pdf"); fileEnds.add("dwg"); fileEnds.add("stp");
+            fileEnds.add("step");
+            ListOfFilesGen generator =
+                new ListOfFilesGen(
+                    Settings.DRAWINGS_DIR,
+                    fileEnds
+                );
+            manager.newDB(generator.getListOfFiles());
+            JOptionPane.showMessageDialog(
+                null,
+                "Tabela atualizada!",
+                "Sucesso!",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+            frame.setBtnThree(oldBtn);
+        } catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(
+                null,
+                "'" + Settings.CSV_PATH + "' não encontrado",
+                "ERRO",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(
+                null,
+                "'" + Settings.CSV_PATH + "' não encontrado",
+                "ERRO",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        }
     }
 
 }
