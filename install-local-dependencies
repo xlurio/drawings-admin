@@ -1,0 +1,6 @@
+mvn install:install-file \
+-Dfile=/home/xlurio/Projects/DrawingsAdmin/drawingsadmin/lib/filedbgen-1.0-SNAPSHOT.jar \
+-DgroupId=com.calegario \
+-DartifactId=filedbgen \
+-Dversion=1.0-SNAPSHOT \
+-Dpackaging=jar

@@ -1,13 +1,38 @@
 package com.calegario.drawingsadmin;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import com.calegario.addpath.AddPathListener;
+import com.calegario.csvdb.CSVDBManager;
+import com.calegario.rmpath.RmPathListener;
+import com.calegario.defaultwins.threebtnsbox.ThreeBtnsBox;
+import com.calegario.update.UpdateListener;
+import javax.swing.*;
+
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        String[] header = new String[]{
+                "file_name", "extension", "path", "last_mod"
+        };
+        if (!Settings.CSV_PATH.isEmpty()){
+            CSVDBManager manager = new CSVDBManager(Settings.CSV_PATH, header);
+            ThreeBtnsBox frame = new ThreeBtnsBox(
+                "Gerenciador de Desenhos",
+                "Selecione uma ação:",
+                "Adicionar caminho",
+                "Remover caminho",
+                "Atualizar tabela"
+            );
+            frame.setBtnOneListener(new AddPathListener(manager));
+            frame.setBtnOneListener(new RmPathListener(manager));
+            frame.setBtnOneListener(new UpdateListener(frame, manager));
+        } else {
+            JOptionPane.showMessageDialog(
+                null,
+                "CSV_PATH não informado",
+                "ERRO",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
     }
 }
