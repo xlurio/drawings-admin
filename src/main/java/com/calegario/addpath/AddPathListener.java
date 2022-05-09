@@ -31,7 +31,8 @@ public class AddPathListener implements ActionListener {
                 try {
                     String pathToAdd = frame.getUserInput().toString();
                     if (!pathToAdd.isEmpty()) {
-                        String[] row = ListOfFilesGen.getInfoFromPath(pathToAdd);
+                        String[] row =
+                            ListOfFilesGen.getInfoFromPath(pathToAdd);
                         manager.addRow(row);
                         JOptionPane.showMessageDialog(
                             null,
@@ -39,6 +40,7 @@ public class AddPathListener implements ActionListener {
                             "Sucesso!",
                             JOptionPane.INFORMATION_MESSAGE
                         );
+                        frame.dispose();
                     }
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(

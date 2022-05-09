@@ -31,6 +31,7 @@ public class RmPathListener implements ActionListener {
                 try {
                     String pathToRemove = frame.getUserInput().toString();
                     if (!pathToRemove.isEmpty()) {
+                        pathToRemove = pathToRemove.replaceAll("\\\\", "/");
                         manager.removeRow(pathToRemove, "path");
                         JOptionPane.showMessageDialog(
                             null,
@@ -38,6 +39,7 @@ public class RmPathListener implements ActionListener {
                             "Sucesso!",
                             JOptionPane.INFORMATION_MESSAGE
                         );
+                        frame.dispose();
                     }
                 } catch (FileNotFoundException ex){
                     JOptionPane.showMessageDialog(
