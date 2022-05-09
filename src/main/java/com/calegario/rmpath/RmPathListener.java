@@ -21,7 +21,9 @@ public class RmPathListener implements ActionListener {
     public void actionPerformed (ActionEvent ev) {
         final InputBox frame = new InputBox(
             "Remover caminho",
-            "Informe o caminho a remover"
+            "Informe o caminho a remover",
+            256,
+            160
         );
         frame.setBtnListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
@@ -53,6 +55,7 @@ public class RmPathListener implements ActionListener {
                 }
             }
         });
+        frame.showBox();
     }
 
 }

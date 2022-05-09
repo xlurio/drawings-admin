@@ -1,12 +1,26 @@
 mvn install:install-file \
--Dfile=/home/xlurio/Downloads/filedbgen-1.0-SNAPSHOT.jar \
+-Dfile=filedbgen-1.0-SNAPSHOT.jar \
 -DgroupId=com.calegario \
 -DartifactId=filedbgen \
 -Dversion=1.0-SNAPSHOT \
 -Dpackaging=jar && \
 mvn install:install-file \
--Dfile=/home/xlurio/Downloads/defaultwins-1.0-SNAPSHOT.jar \
+-Dfile=csvdb-1.0-SNAPSHOT.jar \
+-DgroupId=com.calegario \
+-DartifactId=csvdb \
+-Dversion=1.0-SNAPSHOT \
+-Dpackaging=jar && \
+mvn install:install-file \
+-Dfile=defaultwins-1.0-SNAPSHOT.jar \
 -DgroupId=com.calegario \
 -DartifactId=defaultwins \
 -Dversion=1.0-SNAPSHOT \
+-Dpackaging=jar && \
+mvn install:install-file \
+-Dfile=dtmanager-1.0-SNAPSHOT.jar \
+-DgroupId=com.calegario \
+-DartifactId=dtmanager \
+-Dversion=1.0-SNAPSHOT \
 -Dpackaging=jar
+
+mvn install:install-file -Dfile=C:\Users\lucas.correa\Downloads\filedbgen-1.0-SNAPSHOT.jar -DgroupId=com.calegario -DartifactId=filedbgen -Dversion=1.0-SNAPSHOT -Dpackaging=jar

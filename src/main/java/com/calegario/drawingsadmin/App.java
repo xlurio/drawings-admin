@@ -21,11 +21,14 @@ public class App
                 "Selecione uma ação:",
                 "Adicionar caminho",
                 "Remover caminho",
-                "Atualizar tabela"
+                "Atualizar tabela",
+                256,
+                256
             );
             frame.setBtnOneListener(new AddPathListener(manager));
-            frame.setBtnOneListener(new RmPathListener(manager));
-            frame.setBtnOneListener(new UpdateListener(frame, manager));
+            frame.setBtnTwoListener(new RmPathListener(manager));
+            frame.setBtnThreeListener(new UpdateListener(frame, manager));
+            frame.showBox();
         }
         if (Settings.CSV_PATH.isEmpty()) {
             JOptionPane.showMessageDialog(

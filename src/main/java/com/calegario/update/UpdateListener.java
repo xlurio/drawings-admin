@@ -29,7 +29,12 @@ public class UpdateListener implements ActionListener {
                 "Atualizando...",
                 new ActionListener(){
                     public void actionPerformed(ActionEvent ev) {
-
+                        JOptionPane.showMessageDialog(
+                            null,
+                            "Tabela em atualização...",
+                            "Aguarde",
+                            JOptionPane.INFORMATION_MESSAGE
+                        );
                     }
                 }
             );
