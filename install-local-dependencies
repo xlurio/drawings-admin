@@ -11,7 +11,7 @@ mvn install:install-file \
 -Dversion=1.0-SNAPSHOT \
 -Dpackaging=jar && \
 mvn install:install-file \
--Dfile=defaultwins-1.0-SNAPSHOT.jar \
+-Dfile=C:\Users\lucas.correa\Projects\Java\DefaultWindows\default-windows\target\defaultwins-1.0-SNAPSHOT.jar \
 -DgroupId=com.calegario \
 -DartifactId=defaultwins \
 -Dversion=1.0-SNAPSHOT \
@@ -22,5 +22,3 @@ mvn install:install-file \
 -DartifactId=dtmanager \
 -Dversion=1.0-SNAPSHOT \
 -Dpackaging=jar
-
-mvn install:install-file -Dfile=C:\Users\lucas.correa\Downloads\csvdb-1.0-SNAPSHOT.jar -DgroupId=com.calegario -DartifactId=csvdb -Dversion=1.0-SNAPSHOT -Dpackaging=jar

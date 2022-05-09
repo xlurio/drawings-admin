@@ -22,6 +22,7 @@ public class RmPathListener implements ActionListener {
         final InputBox frame = new InputBox(
             "Remover caminho",
             "Informe o caminho a remover",
+            false,
             256,
             160
         );

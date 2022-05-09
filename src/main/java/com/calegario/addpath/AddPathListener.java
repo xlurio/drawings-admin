@@ -22,6 +22,7 @@ public class AddPathListener implements ActionListener {
         final InputBox frame = new InputBox(
             "Adicionar caminho",
             "Informe o caminho a adicionar",
+            false,
             256,
             160
         );

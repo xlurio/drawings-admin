@@ -20,6 +20,7 @@ public class App
             ThreeBtnsBox frame = new ThreeBtnsBox(
                 "Gerenciador de Desenhos",
                 "Selecione uma ação:",
+                true,
                 "Adicionar caminho",
                 "Remover caminho",
                 "Atualizar tabela",
