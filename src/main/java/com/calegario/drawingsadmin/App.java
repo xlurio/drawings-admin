@@ -16,7 +16,7 @@ public class App
         };
         if (!Settings.CSV_PATH.isEmpty() && !Settings.DRAWINGS_DIR.isEmpty()){
             CSVDBManager manager = new CSVDBManager(Settings.CSV_PATH, header,
-                                                    ';');
+                                                    '|');
             ThreeBtnsBox frame = new ThreeBtnsBox(
                 "Gerenciador de Desenhos",
                 "Selecione uma ação:",
