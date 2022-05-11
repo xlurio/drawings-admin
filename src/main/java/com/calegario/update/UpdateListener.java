@@ -41,7 +41,7 @@ public class UpdateListener implements ActionListener {
             frame.setBtnThree(updatingBtn);
             List<String> fileEnds = new ArrayList<String>();
             fileEnds.add("pdf"); fileEnds.add("dwg"); fileEnds.add("stp");
-            fileEnds.add("step");
+            fileEnds.add("step"); fileEnds.add("zip");
             ListOfFilesGen generator =
                 new ListOfFilesGen(
                     Settings.DRAWINGS_DIR,
