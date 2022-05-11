@@ -6,6 +6,7 @@ import com.calegario.rmpath.RmPathListener;
 import com.calegario.defaultwins.threebtnsbox.ThreeBtnsBox;
 import com.calegario.update.UpdateListener;
 import javax.swing.*;
+import java.nio.charset.*;
 
 public class App
 {
@@ -15,8 +16,11 @@ public class App
                 "file_name", "extension", "path", "last_mod"
         };
         if (!Settings.CSV_PATH.isEmpty() && !Settings.DRAWINGS_DIR.isEmpty()){
-            CSVDBManager manager = new CSVDBManager(Settings.CSV_PATH, header,
-                                                    '|');
+            CSVDBManager manager = new CSVDBManager(
+                Settings.CSV_PATH,
+                header,
+                '|'
+            );
             ThreeBtnsBox frame = new ThreeBtnsBox(
                 "Gerenciador de Desenhos",
                 "Selecione uma ação:",
