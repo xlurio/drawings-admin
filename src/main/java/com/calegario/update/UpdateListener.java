@@ -63,13 +63,13 @@ public class UpdateListener implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE
             );
         } catch (IOException ex) {
-            ex.printStackTrace();
-            // JOptionPane.showMessageDialog(
-            //     null,
-            //     "Não foi possível gravar o arquivo '" + Settings.CSV_PATH + "'",
-            //     "ERRO",
-            //     JOptionPane.INFORMATION_MESSAGE
-            // );
+            // ex.printStackTrace();
+            JOptionPane.showMessageDialog(
+                null,
+                "Não foi possível gravar o arquivo '" + Settings.CSV_PATH + "'",
+                "ERRO",
+                JOptionPane.INFORMATION_MESSAGE
+            );
         }
     }
 
